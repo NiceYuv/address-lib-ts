@@ -1,0 +1,11 @@
+###< Mac ###
+.DS_Store
+###> Mac ###
+
+###< IDE ###
+.idea
+###> IDE ###
+
+###< package ###
+/node_modules
+###> Composer ###
