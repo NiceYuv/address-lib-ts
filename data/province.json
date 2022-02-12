@@ -1,1 +1,250 @@
-[{"id":1,"pid":0,"name":"北京市","level":1,"child":"11.html","childs":[]},{"id":2,"pid":0,"name":"天津市","level":1,"child":"12.html","childs":[]},{"id":3,"pid":0,"name":"河北省","level":1,"child":"13.html","childs":[]},{"id":4,"pid":0,"name":"山西省","level":1,"child":"14.html","childs":[]},{"id":5,"pid":0,"name":"内蒙古自治区","level":1,"child":"15.html","childs":[]},{"id":6,"pid":0,"name":"辽宁省","level":1,"child":"21.html","childs":[]},{"id":7,"pid":0,"name":"吉林省","level":1,"child":"22.html","childs":[]},{"id":8,"pid":0,"name":"黑龙江省","level":1,"child":"23.html","childs":[]},{"id":9,"pid":0,"name":"上海市","level":1,"child":"31.html","childs":[]},{"id":10,"pid":0,"name":"江苏省","level":1,"child":"32.html","childs":[]},{"id":11,"pid":0,"name":"浙江省","level":1,"child":"33.html","childs":[]},{"id":12,"pid":0,"name":"安徽省","level":1,"child":"34.html","childs":[]},{"id":13,"pid":0,"name":"福建省","level":1,"child":"35.html","childs":[]},{"id":14,"pid":0,"name":"江西省","level":1,"child":"36.html","childs":[]},{"id":15,"pid":0,"name":"山东省","level":1,"child":"37.html","childs":[]},{"id":16,"pid":0,"name":"河南省","level":1,"child":"41.html","childs":[]},{"id":17,"pid":0,"name":"湖北省","level":1,"child":"42.html","childs":[]},{"id":18,"pid":0,"name":"湖南省","level":1,"child":"43.html","childs":[]},{"id":19,"pid":0,"name":"广东省","level":1,"child":"44.html","childs":[]},{"id":20,"pid":0,"name":"广西壮族自治区","level":1,"child":"45.html","childs":[]},{"id":21,"pid":0,"name":"海南省","level":1,"child":"46.html","childs":[]},{"id":22,"pid":0,"name":"重庆市","level":1,"child":"50.html","childs":[]},{"id":23,"pid":0,"name":"四川省","level":1,"child":"51.html","childs":[]},{"id":24,"pid":0,"name":"贵州省","level":1,"child":"52.html","childs":[]},{"id":25,"pid":0,"name":"云南省","level":1,"child":"53.html","childs":[]},{"id":26,"pid":0,"name":"西藏自治区","level":1,"child":"54.html","childs":[]},{"id":27,"pid":0,"name":"陕西省","level":1,"child":"61.html","childs":[]},{"id":28,"pid":0,"name":"甘肃省","level":1,"child":"62.html","childs":[]},{"id":29,"pid":0,"name":"青海省","level":1,"child":"63.html","childs":[]},{"id":30,"pid":0,"name":"宁夏回族自治区","level":1,"child":"64.html","childs":[]},{"id":31,"pid":0,"name":"新疆维吾尔自治区","level":1,"child":"65.html","childs":[]}]
+[
+    {
+        "id": 1,
+        "pid": 0,
+        "name": "北京市",
+        "level": 1,
+        "child": "11",
+        "childs": []
+    },
+    {
+        "id": 2,
+        "pid": 0,
+        "name": "天津市",
+        "level": 1,
+        "child": "12",
+        "childs": []
+    },
+    {
+        "id": 3,
+        "pid": 0,
+        "name": "河北省",
+        "level": 1,
+        "child": "13",
+        "childs": []
+    },
+    {
+        "id": 4,
+        "pid": 0,
+        "name": "山西省",
+        "level": 1,
+        "child": "14",
+        "childs": []
+    },
+    {
+        "id": 5,
+        "pid": 0,
+        "name": "内蒙古自治区",
+        "level": 1,
+        "child": "15",
+        "childs": []
+    },
+    {
+        "id": 6,
+        "pid": 0,
+        "name": "辽宁省",
+        "level": 1,
+        "child": "21",
+        "childs": []
+    },
+    {
+        "id": 7,
+        "pid": 0,
+        "name": "吉林省",
+        "level": 1,
+        "child": "22",
+        "childs": []
+    },
+    {
+        "id": 8,
+        "pid": 0,
+        "name": "黑龙江省",
+        "level": 1,
+        "child": "23",
+        "childs": []
+    },
+    {
+        "id": 9,
+        "pid": 0,
+        "name": "上海市",
+        "level": 1,
+        "child": "31",
+        "childs": []
+    },
+    {
+        "id": 10,
+        "pid": 0,
+        "name": "江苏省",
+        "level": 1,
+        "child": "32",
+        "childs": []
+    },
+    {
+        "id": 11,
+        "pid": 0,
+        "name": "浙江省",
+        "level": 1,
+        "child": "33",
+        "childs": []
+    },
+    {
+        "id": 12,
+        "pid": 0,
+        "name": "安徽省",
+        "level": 1,
+        "child": "34",
+        "childs": []
+    },
+    {
+        "id": 13,
+        "pid": 0,
+        "name": "福建省",
+        "level": 1,
+        "child": "35",
+        "childs": []
+    },
+    {
+        "id": 14,
+        "pid": 0,
+        "name": "江西省",
+        "level": 1,
+        "child": "36",
+        "childs": []
+    },
+    {
+        "id": 15,
+        "pid": 0,
+        "name": "山东省",
+        "level": 1,
+        "child": "37",
+        "childs": []
+    },
+    {
+        "id": 16,
+        "pid": 0,
+        "name": "河南省",
+        "level": 1,
+        "child": "41",
+        "childs": []
+    },
+    {
+        "id": 17,
+        "pid": 0,
+        "name": "湖北省",
+        "level": 1,
+        "child": "42",
+        "childs": []
+    },
+    {
+        "id": 18,
+        "pid": 0,
+        "name": "湖南省",
+        "level": 1,
+        "child": "43",
+        "childs": []
+    },
+    {
+        "id": 19,
+        "pid": 0,
+        "name": "广东省",
+        "level": 1,
+        "child": "44",
+        "childs": []
+    },
+    {
+        "id": 20,
+        "pid": 0,
+        "name": "广西壮族自治区",
+        "level": 1,
+        "child": "45",
+        "childs": []
+    },
+    {
+        "id": 21,
+        "pid": 0,
+        "name": "海南省",
+        "level": 1,
+        "child": "46",
+        "childs": []
+    },
+    {
+        "id": 22,
+        "pid": 0,
+        "name": "重庆市",
+        "level": 1,
+        "child": "50",
+        "childs": []
+    },
+    {
+        "id": 23,
+        "pid": 0,
+        "name": "四川省",
+        "level": 1,
+        "child": "51",
+        "childs": []
+    },
+    {
+        "id": 24,
+        "pid": 0,
+        "name": "贵州省",
+        "level": 1,
+        "child": "52",
+        "childs": []
+    },
+    {
+        "id": 25,
+        "pid": 0,
+        "name": "云南省",
+        "level": 1,
+        "child": "53",
+        "childs": []
+    },
+    {
+        "id": 26,
+        "pid": 0,
+        "name": "西藏自治区",
+        "level": 1,
+        "child": "54",
+        "childs": []
+    },
+    {
+        "id": 27,
+        "pid": 0,
+        "name": "陕西省",
+        "level": 1,
+        "child": "61",
+        "childs": []
+    },
+    {
+        "id": 28,
+        "pid": 0,
+        "name": "甘肃省",
+        "level": 1,
+        "child": "62",
+        "childs": []
+    },
+    {
+        "id": 29,
+        "pid": 0,
+        "name": "青海省",
+        "level": 1,
+        "child": "63",
+        "childs": []
+    },
+    {
+        "id": 30,
+        "pid": 0,
+        "name": "宁夏回族自治区",
+        "level": 1,
+        "child": "64",
+        "childs": []
+    },
+    {
+        "id": 31,
+        "pid": 0,
+        "name": "新疆维吾尔自治区",
+        "level": 1,
+        "child": "65",
+        "childs": []
+    }
+]

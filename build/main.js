@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Requests_1 = __importDefault(require("./Requests"));
 const ProvinceAnalyzer_1 = __importDefault(require("./ProvinceAnalyzer"));
 const CityAnalyzer_1 = __importDefault(require("./CityAnalyzer"));
+const VillagetrAnalyzer_1 = __importDefault(require("./VillagetrAnalyzer"));
 const Func_1 = require("./Func");
 class Main {
     constructor(url, urlPath, fileDir) {
@@ -31,7 +32,71 @@ class Main {
             return yield request.getWebHtml(url);
         });
     }
-    /** 3. Count => CityAnalyzer */
+    /** 5. Villagetr */
+    getVillagetr() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const fileInfo = (0, Func_1.readFile)(this.fileDir + 'province_city_count_town_village.json');
+            if (fileInfo.length !== 0) {
+                const last = (0, Func_1.getArrayLast)(fileInfo);
+                this.data = fileInfo;
+                this.cityId = last[0]['id'];
+                return;
+            }
+            let cityId = this.cityId;
+            // for (let i = 19; i < 20; i++) {
+            for (let i = 0; i < this.data.length; i++) {
+                const parents = this.data[i]['child'] + '/';
+                for (let y = 0; y < this.data[i]['childs'].length; y++) {
+                    // for (let y = 3; y < 4; y++) {
+                    for (let k = 0; k < this.data[i]['childs'][y]['childs'].length; k++) {
+                        // for (let k = 6; k < 7; k++) {
+                        for (let v = 0; v < this.data[i]['childs'][y]['childs'][k]['childs'].length; v++) {
+                            // for (let v = 1; v < 2; v++) {
+                            const parentStr = this.data[i]['childs'][y]['childs'][k]['child'] + '';
+                            const parent = parentStr.split("/")[0] + '/';
+                            const items = this.data[i]['childs'][y]['childs'][k]['childs'][v];
+                            const html = yield this.requestWeb(this.url + parents + parent + items.child + '.html');
+                            const analyzer = VillagetrAnalyzer_1.default.getInstance();
+                            const { id, data } = analyzer.analyze(html, items.id, cityId, '.villagetr');
+                            this.data[i]['childs'][y]['childs'][k]['childs'][v]['childs'] = data;
+                            cityId = id;
+                        }
+                    }
+                }
+            }
+            this.cityId = cityId;
+            (0, Func_1.writeFile)(this.fileDir + 'province_city_count_town_village.json', JSON.stringify(this.data));
+        });
+    }
+    /** 4. Towntr */
+    getTowntr() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const fileInfo = (0, Func_1.readFile)(this.fileDir + 'province_city_count_town.json');
+            if (fileInfo.length !== 0) {
+                const last = (0, Func_1.getArrayLast)(fileInfo);
+                this.data = fileInfo;
+                this.cityId = last[0]['id'];
+                return;
+            }
+            let cityId = this.cityId;
+            for (let i = 0; i < this.data.length; i++) {
+                const parent = this.data[i]['child'] + '/';
+                for (let y = 0; y < this.data[i]['childs'].length; y++) {
+                    for (let k = 0; k < this.data[i]['childs'][y]['childs'].length; k++) {
+                        const items = this.data[i]['childs'][y]['childs'][k];
+                        const html = yield this.requestWeb(this.url + parent + items.child + '.html');
+                        const analyzer = CityAnalyzer_1.default.getInstance();
+                        const { id, data } = analyzer.analyze(html, items.id, cityId, '.towntr');
+                        this.data[i]['childs'][y]['childs'][k]['childs'] = data;
+                        cityId = id;
+                    }
+                }
+            }
+            this.cityId = cityId;
+            (0, Func_1.writeFile)(this.fileDir + 'province_city_count_town.json', JSON.stringify(this.data));
+        });
+    }
+    /** 3. Countytr => CityAnalyzer */
     getCountytr() {
         return __awaiter(this, void 0, void 0, function* () {
             const fileInfo = (0, Func_1.readFile)(this.fileDir + 'province_city_count.json');
@@ -45,9 +110,8 @@ class Main {
             for (let i = 0; i < this.data.length; i++) {
                 for (let y = 0; y < this.data[i]['childs'].length; y++) {
                     const items = this.data[i]['childs'][y];
-                    const html = yield this.requestWeb(this.url + items.child);
+                    const html = yield this.requestWeb(this.url + items.child + '.html');
                     const analyzer = CityAnalyzer_1.default.getInstance();
-                    console.log(items.id);
                     const { id, data } = analyzer.analyze(html, items.id, cityId, '.countytr');
                     this.data[i]['childs'][y]['childs'] = data;
                     cityId = id;
@@ -70,7 +134,7 @@ class Main {
             let cityId = this.cityId;
             for (let i = 0; i < this.data.length; i++) {
                 const items = this.data[i];
-                const html = yield this.requestWeb(this.url + items.child);
+                const html = yield this.requestWeb(this.url + items.child + '.html');
                 const analyzer = CityAnalyzer_1.default.getInstance();
                 const { id, data } = analyzer.analyze(html, items.id, cityId, '.citytr');
                 this.data[i]['childs'] = data;
@@ -104,6 +168,8 @@ class Main {
             yield this.getProvincetr();
             yield this.getCitytr();
             yield this.getCountytr();
+            yield this.getTowntr();
+            yield this.getVillagetr();
             console.log('city info grab ok');
         });
     }

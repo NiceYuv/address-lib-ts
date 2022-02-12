@@ -19,7 +19,8 @@ export default class ProvinceAnalyzer implements Analyzer {
         const provinceInfos: CityInfo[] = []
         provinceItems.map((index, element) => {
             $(element).find('td').map((keys, tdElement) => {
-                const provinceChild = $(tdElement).find('a').attr('href')
+                let provinceChild = $(tdElement).find('a').attr('href') + ''
+                provinceChild = provinceChild.split(".")[0]
                 const provinceName = $(tdElement).find('a').html()?.replace('<br>', '')
                 provinceInfos.push({
                     id: cityId, pid: cityPid, name: provinceName,

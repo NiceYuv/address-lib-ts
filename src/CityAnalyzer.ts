@@ -16,11 +16,12 @@ export default class CityAnalyzer {
         const cityItems = $(className)
         const cityInfos: CityInfo[] = []
         cityItems.map((index, element) => {
-            const cityName = $(element).find('td:nth-child(2) a').html()
-            if (cityName == null) {
+            let cityChild = $(element).find('td:nth-child(2) a').attr('href')
+            if (cityChild == null) {
                 return
             }
-            const cityChild = $(element).find('td:nth-child(2) a').attr('href')
+            cityChild = cityChild.split(".")[0]
+            const cityName = $(element).find('td:nth-child(2) a').html()
             cityInfos.push({
                 id: cityId, pid: cityPid, name: cityName,
                 level: 2, child: cityChild, childs: []
